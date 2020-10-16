@@ -22,4 +22,12 @@ public class MyBinarySearchTree<k extends Comparable<k>> {
 
 	}
 
+	public int size() {
+		return getSize(root);
+	}
+
+	public int getSize(MyBinaryNode<k> current) {
+		return (current == null) ? 0 : 1 + getSize(current.leftNode) + getSize(current.rightNode);
+	}
+
 }
